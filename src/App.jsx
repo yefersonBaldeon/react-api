@@ -1,32 +1,17 @@
 import React, { useEffect, useState } from "react";
 import Son from "./Son";
-import axios from "axios";
+
 import TaskTable from "./components/TaskTable";
+import boostrap from "bootstrap/dist/css/bootstrap.min.css";
+
+
+import TaskCreate from "./components/TaskCreate";
+
 
 function App() {
   const [data, setData] = useState([]);
 
-  const [postData, setPostData] = useState({
-    name: "vamos con todo",
-    salery: 10000,
 
-  });
-
-  const handleSubmit = async (e) => {
-
-    e.preventDefault();
-    try {
-      const response = await axios.post(
-        "https://mysqlexpress-production.up.railway.app/api/employees",
-        postData
-      );
-      console.log("Respuesta del servidor:", response.data);
-      // Realiza acciones adicionales con la respuesta del servidor si es necesario
-    } catch (error) {
-      console.error("Error al enviar la solicitud POST:", error);
-      // Manejar errores de la solicitud aquí
-    }
-  };
 
   useEffect(() => {
     // Función para hacer la solicitud fetch
@@ -46,14 +31,10 @@ function App() {
   }, [data]);
 
   return (
-    <div>
-      <div>
-        <form action="" onSubmit={handleSubmit}>
-          <input type="text" />
-          <button>send</button>
-        </form>
-      </div>
+    <div className="container col-md-5">
 
+      <TaskCreate></TaskCreate>
+        
       <TaskTable data={data}></TaskTable>
     </div>
   );

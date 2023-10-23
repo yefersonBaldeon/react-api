@@ -1,4 +1,7 @@
 {
+
+  "homepage":"https://yefersonBaldeon.github.io/react-api",
+
   "name": "fourteen",
   "private": true,
   "version": "0.0.0",
@@ -7,10 +10,13 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
+
   },
   "dependencies": {
     "axios": "^1.5.1",
+    "bootstrap": "^5.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
